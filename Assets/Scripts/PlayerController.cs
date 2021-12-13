@@ -28,6 +28,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision otherCollider)
     {
-        isOnTheGround = true;
+
+        if (otherCollider.gameObject.CompareTag("suelo"))
+        {
+            isOnTheGround = true;
+        }
+
+        if (otherCollider.gameObject.CompareTag("Obstáculo"))
+        {
+            Time.timeScale = 0;
+        }
+
     }
 }
