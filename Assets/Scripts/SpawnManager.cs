@@ -6,9 +6,11 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject ObstaclePrefabs;
     public Vector3 spawnPosition = new Vector3(30, 0, -0.2f);
+    private float startDeLay = 2f;
+    private float repeatRate = 2f;
     void Start()
     {
-        InvokeRepeating("spawnObstacle", 4, 2);
+        InvokeRepeating("spawnObstacle", startDeLay, repeatRate);
     }
 
     void Update()
