@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 450f;
     public float gravityModifier = 0.9f;
     private bool isOnTheGround = true;
+    
 
 
     void Start()
