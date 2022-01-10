@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class destrouOutOfBounds : MonoBehaviour
 {
-    private float XRange = -4.5f;
-    private int counter = 0;
+    private float XRange = -6f;
 
     void Update()
     {
@@ -13,7 +12,9 @@ public class destrouOutOfBounds : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log($"+1 point");
-
         }
+        
     }
+
+    
 }

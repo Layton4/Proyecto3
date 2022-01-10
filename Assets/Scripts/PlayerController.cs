@@ -8,21 +8,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 450f;
     public float gravityModifier = 0.9f;
     private bool isOnTheGround = true;
-    
+    public bool gameOver;
 
 
     void Start()
     {
+        gameOver = false;
         Physics.gravity *= gravityModifier;
         playerRigidbody = GetComponent<Rigidbody>();
         //playerRigidbody.AddForce(Vector3.up * jumpForce);
+        
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround && !gameOver)
         {
-            playerRigidbody.AddForce(Vector3.up * jumpForce);
+            playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnTheGround = false;
         }
     }
@@ -37,7 +40,10 @@ public class PlayerController : MonoBehaviour
 
         if (otherCollider.gameObject.CompareTag("Obstáculo"))
         {
-            Time.timeScale = 0;
+            Debug.Log("GAMEOVER");
+            //Time.timeScale = 0;
+            gameOver = true;
+
         }
 
     }
