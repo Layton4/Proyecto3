@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class destrouOutOfBounds : MonoBehaviour
 {
-    private float XRange = -6f;
+    private float XRange = -5f;
 
     void Update()
     {

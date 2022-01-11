@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier = 0.9f;
     private bool isOnTheGround = true;
     public bool gameOver;
+    public Animator playerAnimator;
 
+    private int deadtype;
 
     void Start()
     {
@@ -17,8 +20,8 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         playerRigidbody = GetComponent<Rigidbody>();
         //playerRigidbody.AddForce(Vector3.up * jumpForce);
-        
-
+        playerAnimator = GetComponent<Animator>();
+        deadtype = Random.Range(1, 3);
     }
 
     void Update()
@@ -27,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnTheGround = false;
+            playerAnimator.SetTrigger("Jump_trig");
         }
     }
 
@@ -43,7 +47,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("GAMEOVER");
             //Time.timeScale = 0;
             gameOver = true;
-
+            playerAnimator.SetBool("Death_b", true);
+            playerAnimator.SetInteger("DeathType_int", deadtype);
         }
 
     }
