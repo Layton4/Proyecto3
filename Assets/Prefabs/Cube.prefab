@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8552574424463634680}
   - component: {fileID: 8552574424463634683}
   - component: {fileID: 8552574424463634682}
+  - component: {fileID: 1594931140609227864}
   m_Layer: 0
   m_Name: Cube
   m_TagString: suelo
@@ -109,3 +110,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &1594931140609227864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8552574424463634677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3423b9e980a3cb458132c6a1d6b58c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

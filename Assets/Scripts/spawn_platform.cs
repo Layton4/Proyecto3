@@ -14,7 +14,7 @@ public class spawn_platform : MonoBehaviour
     void Start()
     {
        
-        InvokeRepeating("spawnplat", 5, 1.5f);
+        InvokeRepeating("spawnplat", 4, 1.5f);
     }
 
     // Update is called once per frame
